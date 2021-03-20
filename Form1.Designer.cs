@@ -29,47 +29,48 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.playerPaddle = new System.Windows.Forms.PictureBox();
+            this.cpuPaddle = new System.Windows.Forms.PictureBox();
+            this.ball = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.playerScore = new System.Windows.Forms.Label();
             this.cpuScore = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerPaddle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpuPaddle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // playerPaddle
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.YellowGreen;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 185);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(16, 68);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.playerPaddle.BackColor = System.Drawing.Color.YellowGreen;
+            this.playerPaddle.Location = new System.Drawing.Point(12, 185);
+            this.playerPaddle.Name = "playerPaddle";
+            this.playerPaddle.Size = new System.Drawing.Size(16, 68);
+            this.playerPaddle.TabIndex = 1;
+            this.playerPaddle.TabStop = false;
             // 
-            // pictureBox3
+            // cpuPaddle
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Gold;
-            this.pictureBox3.Location = new System.Drawing.Point(772, 185);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(16, 68);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.cpuPaddle.BackColor = System.Drawing.Color.Gold;
+            this.cpuPaddle.Location = new System.Drawing.Point(772, 185);
+            this.cpuPaddle.Name = "cpuPaddle";
+            this.cpuPaddle.Size = new System.Drawing.Size(16, 68);
+            this.cpuPaddle.TabIndex = 2;
+            this.cpuPaddle.TabStop = false;
             // 
-            // pictureBox1
+            // ball
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.IndianRed;
-            this.pictureBox1.Location = new System.Drawing.Point(392, 199);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(14, 16);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.ball.BackColor = System.Drawing.Color.IndianRed;
+            this.ball.Location = new System.Drawing.Point(392, 199);
+            this.ball.Name = "ball";
+            this.ball.Size = new System.Drawing.Size(14, 16);
+            this.ball.TabIndex = 3;
+            this.ball.TabStop = false;
             // 
             // timer1
             // 
             this.timer1.Interval = 20;
+            this.timer1.Tick += new System.EventHandler(this.timerTick);
             // 
             // playerScore
             // 
@@ -101,14 +102,16 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cpuScore);
             this.Controls.Add(this.playerScore);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.ball);
+            this.Controls.Add(this.cpuPaddle);
+            this.Controls.Add(this.playerPaddle);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyIsDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyIsUp);
+            ((System.ComponentModel.ISupportInitialize)(this.playerPaddle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpuPaddle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,9 +119,9 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox playerPaddle;
+        private System.Windows.Forms.PictureBox cpuPaddle;
+        private System.Windows.Forms.PictureBox ball;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label playerScore;
         private System.Windows.Forms.Label cpuScore;

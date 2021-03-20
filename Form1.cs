@@ -12,9 +12,45 @@ namespace Pong
 {
     public partial class Form1 : Form
     {
+        bool goUp; //boolean to detect player up position
+        bool goDown; //same but down position
+        int speed = 5;
+        int ballX = 5; //horizontal X speed value
+        int ballY = 5; //vertical Y speed value of ball
+        int scorePlayer = 0; //player score
+        int scoreCPU = 0; //CPU score
         public Form1()
         {
             InitializeComponent();
+        }
+        private void keyIsDown(object sender, KeyEventArgs e){
+            if (e.KeyCode == Keys.Up)
+                goUp = true;
+            if (e.KeyCode == Keys.Down)
+                goDown = true;
+        }
+
+        private void keyIsUp(object sender, KeyEventArgs e){
+            if (e.KeyCode == Keys.Up)
+                goUp = false;
+            if (e.KeyCode == Keys.Down)
+                goDown = false;
+        }
+
+        private void timerTick(object sender, EventArgs e){
+            playerScore.Text = scorePlayer.ToString();
+            cpuScore.Text = cpuScore.ToString();
+
+            ball.Top = ballX;
+            ball.Left = ballY;
+
+            cpuPaddle.Top += speed;
+
+            if(scorePlayer < 5)
+            {
+                if (cpuPaddle.Top < 0 || cpuPaddle.Top > 455)
+                    speed = -speed;
+            }
         }
     }
 }
