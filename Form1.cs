@@ -51,6 +51,58 @@ namespace Pong
                 if (cpuPaddle.Top < 0 || cpuPaddle.Top > 455)
                     speed = -speed;
             }
+            else
+            {
+                cpuPaddle.Top = ball.Top + 30;
+            }
+
+            //ball has gone pass the player through the left, reset it to middle and update score
+            if (ball.Left < 0)
+            {
+                ball.Left = 434;
+                ballX = -ballX;
+                ballX -= 2;
+                scoreCPU++;
+            }
+
+            //ball has gone past the right, reset it to middle and update score
+            if(ball.Left + ball.Width > ClientSize.Width)
+            {
+                ball.Left = 434;
+                ballX = -ballX;
+                ballX += 2;
+                scorePlayer++;
+            }
+
+            //ball reaches the top of the screen, bounce it in other direction
+            if(ball.Top < 0 || ball.Top + ball.Height > ClientSize.Height)
+                ballY = -ballY;
+
+            //ball hits the player or cpu paddle
+            if (ball.Bounds.IntersectsWith(playerPaddle.Bounds) || ball.Bounds.IntersectsWith(cpuPaddle.Bounds))
+                ballX = -ballX;
+
+            //moving up
+            if (goUp == true && playerPaddle.Top > 0)
+                playerPaddle.Top -= 8;
+
+            //moving down
+            if (goUp == true && playerPaddle.Top < 455)
+                playerPaddle.Top += 8;
+
+            //ending game
+            if(scorePlayer > 10)
+            {
+                gameTimer.Stop();
+                MessageBox.Show("You win!");
+            }
+
+            if(scoreCPU > 10)
+            {
+                gameTimer.Stop();
+                MessageBox.Show("CPU wins the game!");
+            }
         }
+      
     }
 }
