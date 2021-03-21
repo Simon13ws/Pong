@@ -39,10 +39,10 @@ namespace Pong
 
         private void timerTick(object sender, EventArgs e){
             playerScore.Text = scorePlayer.ToString();
-            cpuScore.Text = cpuScore.ToString();
+            cpuScore.Text = scoreCPU.ToString();
 
-            ball.Top = ballX;
-            ball.Left = ballY;
+            ball.Top -= ballY;
+            ball.Left -= ballX;
 
             cpuPaddle.Top += speed;
 
@@ -87,7 +87,7 @@ namespace Pong
                 playerPaddle.Top -= 8;
 
             //moving down
-            if (goUp == true && playerPaddle.Top < 455)
+            if (goDown == true && playerPaddle.Top < 455)
                 playerPaddle.Top += 8;
 
             //ending game

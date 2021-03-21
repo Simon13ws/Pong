@@ -43,7 +43,7 @@
             // playerPaddle
             // 
             this.playerPaddle.BackColor = System.Drawing.Color.YellowGreen;
-            this.playerPaddle.Location = new System.Drawing.Point(12, 185);
+            this.playerPaddle.Location = new System.Drawing.Point(12, 256);
             this.playerPaddle.Name = "playerPaddle";
             this.playerPaddle.Size = new System.Drawing.Size(16, 68);
             this.playerPaddle.TabIndex = 1;
@@ -52,7 +52,7 @@
             // cpuPaddle
             // 
             this.cpuPaddle.BackColor = System.Drawing.Color.Gold;
-            this.cpuPaddle.Location = new System.Drawing.Point(772, 185);
+            this.cpuPaddle.Location = new System.Drawing.Point(900, 256);
             this.cpuPaddle.Name = "cpuPaddle";
             this.cpuPaddle.Size = new System.Drawing.Size(16, 68);
             this.cpuPaddle.TabIndex = 2;
@@ -61,7 +61,7 @@
             // ball
             // 
             this.ball.BackColor = System.Drawing.Color.IndianRed;
-            this.ball.Location = new System.Drawing.Point(392, 199);
+            this.ball.Location = new System.Drawing.Point(450, 292);
             this.ball.Name = "ball";
             this.ball.Size = new System.Drawing.Size(14, 16);
             this.ball.TabIndex = 3;
@@ -69,6 +69,7 @@
             // 
             // gameTimer
             // 
+            this.gameTimer.Enabled = true;
             this.gameTimer.Interval = 20;
             this.gameTimer.Tick += new System.EventHandler(this.timerTick);
             // 
@@ -88,7 +89,7 @@
             this.cpuScore.AutoSize = true;
             this.cpuScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cpuScore.ForeColor = System.Drawing.Color.OrangeRed;
-            this.cpuScore.Location = new System.Drawing.Point(426, 28);
+            this.cpuScore.Location = new System.Drawing.Point(548, 28);
             this.cpuScore.Name = "cpuScore";
             this.cpuScore.Size = new System.Drawing.Size(38, 26);
             this.cpuScore.TabIndex = 6;
@@ -99,7 +100,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(928, 574);
             this.Controls.Add(this.cpuScore);
             this.Controls.Add(this.playerScore);
             this.Controls.Add(this.ball);
