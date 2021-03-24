@@ -78,7 +78,7 @@
             this.playerScore.AutoSize = true;
             this.playerScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.playerScore.ForeColor = System.Drawing.Color.YellowGreen;
-            this.playerScore.Location = new System.Drawing.Point(327, 28);
+            this.playerScore.Location = new System.Drawing.Point(386, 28);
             this.playerScore.Name = "playerScore";
             this.playerScore.Size = new System.Drawing.Size(38, 26);
             this.playerScore.TabIndex = 4;
@@ -89,7 +89,7 @@
             this.cpuScore.AutoSize = true;
             this.cpuScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cpuScore.ForeColor = System.Drawing.Color.OrangeRed;
-            this.cpuScore.Location = new System.Drawing.Point(548, 28);
+            this.cpuScore.Location = new System.Drawing.Point(489, 28);
             this.cpuScore.Name = "cpuScore";
             this.cpuScore.Size = new System.Drawing.Size(38, 26);
             this.cpuScore.TabIndex = 6;
